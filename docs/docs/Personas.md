@@ -78,13 +78,31 @@ Faster operational decision-making.
 SAP Support Engineer
 
 ### Responsibilities
+Support enigneer need to resove the ticket raied by AP team
+he has to fix the error in quick time so that payment is released to supplier
 
 ### Goals
+Reduce repetitive support tickets through self-service.
+Resolve incidents faster while maintaining high-quality solutions.
+Spend more time on complex issues instead of repetitive investigations.
+Improve overall support efficiency and SLA compliance.
 
 ### Pain Points
+Large volume of repetitive invoice-related tickets.
+Manual investigation of similar issues.
+Pressure to meet SLA targets.
 
 ### Current Process
+When a ticket is raised, the Support Engineer manually analyzes logs, reviews invoice and purchase order data, reproduces the issue if required, identifies the root cause, and communicates the resolution back to the Finance team.
 
 ### How SIIA Helps
+Provides a preliminary root cause analysis before manual investigation begins.
+Suggests likely resolutions and relevant SAP Notes.
+Reduces time spent on repetitive investigations.
+Enables Support Engineers to focus on complex technical issues.
 
 ### Success Looks Like
+Reduced volume of repetitive support tickets.
+Faster incident resolution within SLA.
+More time available for complex SAP issues.
+Improved first-time resolution rate.
