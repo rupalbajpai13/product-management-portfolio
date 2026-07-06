@@ -33,3 +33,34 @@
                                       │
                                       ▼
                             Feedback Collection Agent
+
+
+                            Simplified version : Streamlit UI
+
+↓
+
+Investigation Agent
+
+↓
+
+Invoice Agent
+
+↓
+
+JSON
+
+↓
+
+Rule Agent
+
+↓
+
+Knowledge Agent
+
+↓
+
+GPT
+
+↓
+
+Response
