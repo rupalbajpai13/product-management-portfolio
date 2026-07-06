@@ -1,28 +1,35 @@
                     Accounts Payable Specialist
                                │
                                ▼
-                  SIIIA Investigation Screen
+                    Investigation Orchestrator Agent
+                               │
+        ┌──────────────┬──────────────┬──────────────┐
+        ▼              ▼              ▼              ▼
+  Invoice Agent   Shipment Agent   Rule Agent   Knowledge Agent
+        │              │              │              │
+        ▼              ▼              ▼              ▼
+ Invoice Data     Shipment Data   Business Rules    SAP KBAs
+        │              │              │              │
+        └──────────────┴──────────────┴──────────────┘
                                │
                                ▼
-                Invoice Investigation Agent
-                     (Workflow Orchestrator)
+                   Evidence Evaluation Agent
                                │
- ┌──────────────┬───────────────┬─────────────────┬─────────────────┐
- ▼              ▼               ▼                 ▼
-Invoice     Shipment        Business Rule     Knowledge
-Retriever   Retriever       Validation        Retrieval
-Agent        Agent            Agent            Agent
- │              │               │                 │
- │              │               │                 │
-Invoice DB   PO / ASN      Rule Engine      SAP KBA Repository
-                             INV-187          KB1390832
- └──────────────┴───────────────┴─────────────────┘
-                               │
-                               ▼
-                    AI Reasoning Engine (LLM)
-                               │
-                               ▼
-        Root Cause + Evidence + Confidence + Recommendation
-                               │
-                               ▼
-                      Feedback & Telemetry
+              Is evidence sufficient?
+                  │                    │
+                YES                    NO
+                  │                    │
+                  ▼                    ▼
+          Explanation Agent      Historical Case Agent
+                                      │
+                                      ▼
+                              Similar Incident Search
+                                      │
+                                      ▼
+                              Explanation Agent
+                                      │
+                                      ▼
+                     Root Cause + Confidence + Recommendation
+                                      │
+                                      ▼
+                            Feedback Collection Agent
