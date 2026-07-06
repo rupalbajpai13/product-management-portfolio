@@ -17,9 +17,9 @@ Step 1: Review the given scenario and list at least 2 items for each of the foll
 
 Risks you will face:
 •	
-•	<>
-•	<>
-•	<>
+•
+•	
+•	
 
 Rewards you will get:
 •	
@@ -71,3 +71,6 @@ Product manager skills list:
 •	Strategic Thinking
 •	Communication Skills
 •	Project Management Skills
+
+
+Reflections : 

@@ -22,9 +22,29 @@ give recommendations on related Note or HELP portal link so that i can get suppo
 
 ***********************************************************
 
-Epic 3 : Capture User FeedBack
+Epic 3 : Feedback & Continuous Improvement
 
-User Story 5 : Us005 
-As a Product Manager , I want the AI assistant to give me feedback of the user on AI recommendations so that i can use this data to refine prompts, enhance retrieval quality, and continuously improve future product releases.
+User Story 5 : US005 
+As a Product Manager, I want the system to capture user feedback on AI recommendations, so that I can identify improvement opportunities and continuously enhance the product experience.
+
+************************************************************
+
+Epic 4: Analytics & Insights
+
+User Story 6 : US-006
+
+As a Finance Manager, I want to view trends in invoice exceptions, so that I can identify recurring business issues and improve operational efficiency.
+
+User Story 7 : US007 
+
+As a Support Manager, I want to see the most common root causes of invoice failures, so that I can proactively reduce support incidents.
+
+***************************************************************
+
+
+
+
+
+
 
 
