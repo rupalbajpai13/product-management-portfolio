@@ -1,29 +1,38 @@
-# Invoice Service
-# Loads invoice data from JSON (MVP). SAP API integration is a future stub.
-
 import json
-import os
+from pathlib import Path
+
+from models.invoice import Invoice
 
 
 class InvoiceService:
-    def __init__(self, data_source="json"):
-        self.data_source = data_source
+    """
+    Service responsible for retrieving invoice data.
 
-    def get_invoice(self, invoice_number):
-        if self.data_source == "json":
-            return self._load_from_json(invoice_number)
-        elif self.data_source == "sap_api":
-            return self._load_from_sap_api(invoice_number)
+    Current implementation:
+        - Reads from mock JSON.
 
-    def _load_from_json(self, invoice_number):
-        json_path = os.path.join(os.path.dirname(__file__), "../../mock_data/invoices.json")
-        with open(json_path, "r") as f:
-            invoices = json.load(f)
+    Future implementation:
+        - SAP OData API
+        - SAP RFC
+        - REST API
+        - Database
+    """
+
+    def __init__(self):
+        self.data_file = (
+            Path(__file__).resolve().parent.parent.parent
+            / "mock_data"
+            / "invoices.json"
+        )
+
+    def get_invoice(self, invoice_number: str) -> Invoice | None:
+
+        with open(self.data_file, "r") as file:
+            invoices = json.load(file)
+
         for invoice in invoices:
-            if invoice["invoice_number"] == invoice_number:
-                return invoice
-        return None
 
-    def _load_from_sap_api(self, invoice_number):
-        # TODO: integrate SAP API
-        raise NotImplementedError("SAP API integration not yet implemented.")
+            if invoice["invoice_number"] == invoice_number:
+                return Invoice(**invoice)
+
+        return None
