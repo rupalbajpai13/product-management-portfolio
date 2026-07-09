@@ -36,6 +36,8 @@ if st.button("🔍 Investigate"):
 
         if result:
             invoice = result["invoice"]
+            findings = result["findings"]
+
             st.success(f"Invoice {invoice.invoice_number} fetched successfully.")
 
             st.subheader("Invoice Details")
@@ -50,6 +52,18 @@ if st.button("🔍 Investigate"):
                 st.metric("Amount", f"${invoice.invoice_amount:,}")
                 st.metric("Quantity", invoice.invoice_quantity)
                 st.metric("Status", invoice.status)
+
+            if findings:
+                st.divider()
+                st.subheader("Investigation Findings")
+                for finding in findings:
+                    severity_color = {"HIGH": "🔴", "MEDIUM": "🟡", "LOW": "🟢"}.get(finding.severity, "⚪")
+                    with st.expander(f"{severity_color} {finding.rule} — {finding.severity}"):
+                        st.write(f"**Issue:** {finding.message}")
+                        st.write(f"**Recommendation:** {finding.recommendation}")
+                        st.write(f"**SAP T-Code:** `{finding.sap_tcode}`")
+            else:
+                st.info("No issues found for this invoice.")
 
         else:
             st.error(f"Invoice '{invoice_number}' not found.")
