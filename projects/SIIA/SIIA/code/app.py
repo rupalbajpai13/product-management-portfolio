@@ -35,8 +35,8 @@ if st.button("🔍 Investigate"):
         result = orchestrator.run(invoice_number, error)
 
         if result:
-            invoice = result["invoice"]
-            findings = result["findings"]
+            invoice = result.invoice
+            findings = result.findings
 
             st.success(f"Invoice {invoice.invoice_number} fetched successfully.")
 
@@ -64,6 +64,20 @@ if st.button("🔍 Investigate"):
                         st.write(f"**SAP T-Code:** `{finding.sap_tcode}`")
             else:
                 st.info("No issues found for this invoice.")
+
+            st.divider()
+            st.subheader("🧠 RCA Summary")
+
+            col1, col2 = st.columns(2)
+            with col1:
+                st.info(f"**Root Cause**\n\n{result.root_cause}")
+            with col2:
+                st.success(f"**Recommendation**\n\n{result.recommendation}")
+
+            confidence_pct = int(result.confidence * 100)
+            st.progress(result.confidence, text=f"Confidence: {confidence_pct}%")
+
+            st.caption(f"Investigated by: {', '.join(result.investigated_by)}")
 
         else:
             st.error(f"Invoice '{invoice_number}' not found.")
