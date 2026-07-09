@@ -35,3 +35,34 @@ An AI assistant that helps Product Managers generate high-quality Product Requir
 ### Future AI Products
 
 A collection of AI product ideas and prototypes exploring enterprise productivity, automation, and intelligent decision support.
+
+
+
+
+                 SIIIA Product Evolution
+
+Foundation
+      │
+      ▼
+Explainable AI
+      │
+      ▼
+AI Evaluation
+      │
+      ▼
+Knowledge Retrieval (RAG)
+      │
+      ▼
+Multi-Workflow Investigation
+      │
+      ▼
+Agentic Investigation
+      │
+      ▼
+Continuous Learning
+      │
+      ▼
+Enterprise Integration
+      │
+      ▼
+Enterprise AI Investigation Platform
