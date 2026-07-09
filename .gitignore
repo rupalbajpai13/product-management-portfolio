@@ -19,6 +19,7 @@ credentials/
 
 # Claude Code
 .claude/
+.mcp.json
 
 # IDE
 .vscode/

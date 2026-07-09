@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import streamlit as st
-from agents.invoice_agent import InvoiceAgent
+from agents.orchestrator_agent import OrchestratorAgent
 
 st.set_page_config(
     page_title="SIIA",
@@ -31,10 +31,11 @@ if st.button("🔍 Investigate"):
     if not invoice_number:
         st.warning("Please enter an invoice number.")
     else:
-        agent = InvoiceAgent()
-        invoice = agent.fetch(invoice_number)
+        orchestrator = OrchestratorAgent()
+        result = orchestrator.run(invoice_number, error)
 
-        if invoice:
+        if result:
+            invoice = result["invoice"]
             st.success(f"Invoice {invoice.invoice_number} fetched successfully.")
 
             st.subheader("Invoice Details")
