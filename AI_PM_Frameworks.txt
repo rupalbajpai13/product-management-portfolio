@@ -1,0 +1,344 @@
+===========================================
+AI PRODUCT MANAGEMENT PLAYBOOK
+===========================================
+
+1. 5 Whys
+Purpose:
+Find the real root cause instead of solving symptoms.
+
+Used For:
+- Problem Discovery
+- Root Cause Analysis
+
+-------------------------------------------
+
+2. Jobs To Be Done (JTBD)
+Purpose:
+Understand what job the customer is hiring the product to perform.
+
+Used For:
+- Product Discovery
+- Feature Design
+- Customer Understanding
+
+-------------------------------------------
+
+3. User Journey Mapping
+Purpose:
+Visualize the current user workflow, pain points, and opportunities.
+
+Used For:
+- UX Design
+- Process Improvement
+- AI Opportunity Identification
+
+-------------------------------------------
+
+4. Opportunity Solution Tree (OST)
+Purpose:
+Connect business outcomes to opportunities, solutions, and experiments.
+
+Used For:
+- Feature Discovery
+- Product Strategy
+- Prioritization
+
+-------------------------------------------
+
+5. Product Discovery
+Purpose:
+Validate the problem before building the solution.
+
+Steps:
+Problem → User Research → Hypothesis → Prototype → Validation
+
+-------------------------------------------
+
+6. Lean Canvas
+Purpose:
+Create a one-page business model for a product idea.
+
+Covers:
+- Problem
+- Solution
+- Users
+- Value Proposition
+- Channels
+- Revenue
+- Cost
+
+-------------------------------------------
+
+7. Double Diamond
+Purpose:
+Structured design thinking framework.
+
+Stages:
+Discover
+Define
+Develop
+Deliver
+
+-------------------------------------------
+
+8. Kano Model
+Purpose:
+Categorize features based on customer satisfaction.
+
+Categories:
+- Must Have
+- Performance
+- Delighters
+
+-------------------------------------------
+
+9. RICE Prioritization
+Purpose:
+Prioritize product backlog.
+
+Formula:
+Reach × Impact × Confidence ÷ Effort
+
+-------------------------------------------
+
+10. MoSCoW Prioritization
+Purpose:
+Define MVP scope.
+
+Categories:
+- Must Have
+- Should Have
+- Could Have
+- Won't Have
+
+-------------------------------------------
+
+11. North Star Metric
+Purpose:
+Define the primary metric representing customer value.
+
+Examples:
+- Investigation Time
+- Successful Investigations
+- Recommendation Acceptance
+
+-------------------------------------------
+
+12. HEART Framework (Google)
+Purpose:
+Measure user experience.
+
+Metrics:
+- Happiness
+- Engagement
+- Adoption
+- Retention
+- Task Success
+
+-------------------------------------------
+
+13. AARRR Metrics (Pirate Metrics)
+Purpose:
+Measure product growth.
+
+Stages:
+- Acquisition
+- Activation
+- Retention
+- Referral
+- Revenue
+
+-------------------------------------------
+
+14. Build → Measure → Learn
+Purpose:
+Continuous product improvement.
+
+Cycle:
+Idea → Build → Measure → Learn
+
+-------------------------------------------
+
+15. Design Thinking
+Purpose:
+Human-centered problem solving.
+
+Stages:
+Empathize
+Define
+Ideate
+Prototype
+Test
+
+-------------------------------------------
+
+16. Product-Market Fit (PMF)
+Purpose:
+Validate whether the product solves a real market need.
+
+Questions:
+- Do users love it?
+- Would users miss it?
+- Are they willing to pay?
+
+-------------------------------------------
+
+17. OKRs (Objectives & Key Results)
+Purpose:
+Define measurable business goals.
+
+Structure:
+Objective
+Key Results
+
+-------------------------------------------
+
+18. Outcome vs Output
+Purpose:
+Focus on customer value rather than feature count.
+
+Output:
+Built 10 features.
+
+Outcome:
+Reduced investigation time by 40%.
+
+-------------------------------------------
+
+19. AI Product Evaluation
+Purpose:
+Measure AI quality.
+
+Metrics:
+- Accuracy
+- Grounding
+- Hallucination Rate
+- Recommendation Quality
+- Confidence Calibration
+- Explainability
+
+-------------------------------------------
+
+20. Human-in-the-Loop (HITL)
+Purpose:
+Keep humans involved in important AI decisions.
+
+Used For:
+- Approval workflows
+- Enterprise AI
+- High-risk decisions
+
+-------------------------------------------
+
+21. Responsible AI
+Purpose:
+Build trustworthy AI systems.
+
+Principles:
+- Fairness
+- Transparency
+- Explainability
+- Privacy
+- Accountability
+
+-------------------------------------------
+
+22. RAG (Retrieval Augmented Generation)
+Purpose:
+Ground LLM responses using enterprise knowledge.
+
+Pipeline:
+Retrieve → Augment → Generate
+
+-------------------------------------------
+
+23. Agentic AI
+Purpose:
+AI autonomously plans and executes tasks.
+
+Concepts:
+- Planner
+- Tool Calling
+- Memory
+- Multi-Agent Collaboration
+
+-------------------------------------------
+
+24. ReAct (Reason + Act)
+Purpose:
+AI reasons, performs actions, observes results, and continues iteratively.
+
+Cycle:
+Thought → Action → Observation → Repeat
+
+-------------------------------------------
+
+25. Architecture Decision Records (ADR)
+Purpose:
+Document important architectural decisions.
+
+Structure:
+- Context
+- Decision
+- Consequences
+
+-------------------------------------------
+
+26. Product Metrics
+Purpose:
+Measure product success.
+
+Examples:
+- User Adoption
+- Time Saved
+- Accuracy
+- User Satisfaction
+- AI Acceptance Rate
+
+-------------------------------------------
+
+27. AI Evaluation vs User Feedback
+Purpose:
+Understand the difference.
+
+AI Evaluation:
+Measures technical quality automatically.
+
+User Feedback:
+Measures customer satisfaction and usefulness.
+
+-------------------------------------------
+
+28. Explainable AI (XAI)
+Purpose:
+Help users understand why AI made a recommendation.
+
+Examples:
+- Evidence
+- Rules Applied
+- Confidence
+- Supporting Knowledge
+
+-------------------------------------------
+
+29. Platform Thinking
+Purpose:
+Build reusable capabilities instead of one-off features.
+
+Example:
+Invoice Investigation today.
+Enterprise Investigation Platform tomorrow.
+
+-------------------------------------------
+
+30. Product Vision & Roadmapping
+Purpose:
+Define long-term product direction.
+
+Artifacts:
+- Vision
+- Roadmap
+- Product Principles
+- Success Metrics
+
+===========================================
