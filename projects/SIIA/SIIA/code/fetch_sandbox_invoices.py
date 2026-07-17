@@ -15,7 +15,7 @@ SAP_SANDBOX_URL = (
     "/API_SUPPLIER_INVOICE_SRV/A_SupplierInvoice"
 )
 
-def fetch_invoices(top: int = 10):
+def fetch_invoices(top: int = 50):
     api_key = os.getenv("SAP_API_KEY")
     if not api_key:
         print("ERROR: SAP_API_KEY environment variable not set.")
@@ -23,9 +23,8 @@ def fetch_invoices(top: int = 10):
         return
 
     params = {
-        "$format": "json",
         "$top": top,
-        "$select": "SupplierInvoice,Supplier,DocumentTotalAmount,PurchaseOrder,PostingStatus,FiscalYear",
+        "$select": "SupplierInvoice,InvoicingParty,InvoiceGrossAmount,SupplierInvoiceIDByInvcgParty,PaymentBlockingReason,FiscalYear",
     }
     headers = {"APIKey": api_key, "Accept": "application/json"}
 
@@ -34,24 +33,29 @@ def fetch_invoices(top: int = 10):
     try:
         response = requests.get(SAP_SANDBOX_URL, params=params, headers=headers, timeout=10)
         response.raise_for_status()
-        results = response.json().get("d", {}).get("results", [])
+        results = response.json().get("value", [])
 
         if not results:
             print("No invoices found in sandbox.")
             return
 
-        print(f"{'Invoice No.':<20} {'Supplier':<20} {'Amount':<15} {'PO Number':<20} {'Status'}")
-        print("-" * 85)
+        print(f"{'Invoice No.':<15} {'Invoicing Party':<20} {'Amount':<12} {'Blocking Reason':<20} {'Status'}")
+        print("-" * 80)
+        blocked = []
         for inv in results:
+            blocking = inv.get("PaymentBlockingReason", "")
+            status = "🔴 BLOCKED" if blocking else "🟢 Open"
+            if blocking:
+                blocked.append(inv.get("SupplierInvoice"))
             print(
-                f"{inv.get('SupplierInvoice',''):<20} "
-                f"{inv.get('Supplier',''):<20} "
-                f"{inv.get('DocumentTotalAmount',''):<15} "
-                f"{inv.get('PurchaseOrder',''):<20} "
-                f"{inv.get('PostingStatus','')}"
+                f"{inv.get('SupplierInvoice',''):<15} "
+                f"{inv.get('InvoicingParty',''):<20} "
+                f"{inv.get('InvoiceGrossAmount',''):<12} "
+                f"{blocking:<20} "
+                f"{status}"
             )
 
-        print(f"\nRaw first record:\n{json.dumps(results[0], indent=2)}")
+        print(f"\nBlocked invoices: {blocked if blocked else 'None found in top {top}'}")
 
     except requests.exceptions.HTTPError as e:
         print(f"HTTP Error: {e.response.status_code} — {e.response.text}")

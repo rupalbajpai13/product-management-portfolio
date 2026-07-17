@@ -40,7 +40,6 @@ class InvoiceService:
         try:
             params = {
                 "$filter": f"SupplierInvoice eq '{invoice_number}'",
-                "$format": "json",
                 "$top": 1,
             }
             headers = {"APIKey": self.api_key, "Accept": "application/json"}
@@ -48,7 +47,7 @@ class InvoiceService:
                 self.SAP_SANDBOX_URL, params=params, headers=headers, timeout=10
             )
             response.raise_for_status()
-            results = response.json().get("d", {}).get("results", [])
+            results = response.json().get("value", [])
             if not results:
                 return None
             return self._map_sap_response(results[0])
@@ -56,13 +55,17 @@ class InvoiceService:
             return None
 
     def _map_sap_response(self, data: dict) -> Invoice:
+        # Map PaymentBlockingReason — empty means Open, any value means Blocked
+        blocking_reason = data.get("PaymentBlockingReason", "")
+        status = "Blocked" if blocking_reason else "Open"
+
         return Invoice(
             invoice_number=data.get("SupplierInvoice", ""),
-            vendor_name=data.get("Supplier", "Unknown Vendor"),
-            invoice_amount=float(data.get("DocumentTotalAmount", 0)),
-            po_number=data.get("PurchaseOrder", ""),
-            status=data.get("PostingStatus", "Unknown"),
-            invoice_quantity=int(float(data.get("QuantityInBaseUnit", 0))),
+            vendor_name=data.get("InvoicingParty", "Unknown Vendor"),
+            invoice_amount=float(data.get("InvoiceGrossAmount", 0)),
+            po_number=data.get("SupplierInvoiceIDByInvcgParty", ""),
+            status=status,
+            invoice_quantity=0,  # requires line item API call (A_SuplrInvcItemPurOrdRef)
         )
 
     def _fetch_from_mock(self, invoice_number: str) -> Invoice | None:
